@@ -1,4 +1,6 @@
 import { FaInstagram, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,7 +17,12 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: <FaMapMarkerAlt />, text: "46Q9+V83, Bhagal, Haryana 136034" },
-    { icon: <FaPhone />, text: "85590 38506" }
+    { icon: <FaPhone />, text: "85590 38506" },
+    { 
+      icon: <FaEnvelope />, 
+      text: "Londonstreethotelazimgarh@gmail.com" 
+    }
+    
   ];
 
   const socialMedia = [

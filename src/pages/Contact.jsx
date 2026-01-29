@@ -29,9 +29,10 @@ const Contact = () => {
   ];
 
   const departments = [
-    { name: "Room Bookings", phone: "77990 00040", note: "For room reservations" },
-    { name: "Banquet Hall", phone: "60090 00020", note: "For event bookings" },
-    { name: "General Inquiries", phone: "85590 38506", note: "For all other questions" }
+    { name: "Manager", phone: "77990 00040", note: "For room reservations" },
+    { name: "Owner", phone: "60090 00020", note: "For event bookings" },
+    { name: "General Inquiries", phone: "85590 38506", note: "For all other questions" },
+    { name: "Email-Id", phone: "Londonstreethotelazimgarh@gmail.com", note: "Contact us there" }
   ];
 
   return (

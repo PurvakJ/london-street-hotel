@@ -8970,3 +8970,15 @@ a {
   }
 }
 
+.contact-item {
+  display: flex;
+  align-items: flex-start; /* important for multi-line text */
+  gap: 10px;
+}
+
+.contact-text {
+  max-width: 220px;          /* adjust based on footer width */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
