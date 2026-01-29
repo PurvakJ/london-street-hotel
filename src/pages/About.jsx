@@ -2,6 +2,9 @@
 import Hero from '../components/Hero';
 
 const About = () => {
+  // Instagram booking link
+  const BOOKING_LINK = "https://www.instagram.com/purvak_jindal/";
+
   const aboutSections = [
     {
       id: 1,
@@ -40,6 +43,12 @@ const About = () => {
       icon: "👨‍👩‍👧‍👦"
     }
   ];
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // Open Instagram link in a new tab
+    window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <>
@@ -186,7 +195,13 @@ const About = () => {
               <a href="/rooms" className="btn btn-primary">
                 View Rooms
               </a>
-              <a href="/contact" className="btn btn-outline">
+              <a 
+                href={BOOKING_LINK}
+                className="btn btn-outline"
+                onClick={handleBookNow}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Contact Us
               </a>
             </div>

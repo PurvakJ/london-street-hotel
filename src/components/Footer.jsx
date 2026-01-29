@@ -16,7 +16,7 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "46Q9+V83, Bhagal, Haryana 136034" },
+    { icon: <FaMapMarkerAlt />, text: "Village azimgarh, cheeka samana road" },
     { icon: <FaPhone />, text: "85590 38506" },
     { 
       icon: <FaEnvelope />, 

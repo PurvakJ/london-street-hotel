@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 
 const Rooms = () => {
+  // Instagram booking link
+  const BOOKING_LINK = "https://wa.me/qr/4PHKNEIAHRWRG1";
+
   const [selectedRoom, setSelectedRoom] = useState(0);
   
   const roomTypes = [
@@ -56,6 +59,12 @@ const Rooms = () => {
     { icon: "🧹", feature: "Daily Cleaning", description: "Regular housekeeping service" },
     { icon: "🪟", feature: "Windows", description: "Windows with blackout curtains" }
   ];
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // Open Instagram link in a new tab
+    window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <>
@@ -160,7 +169,13 @@ const Rooms = () => {
               </div>
               
               <div className="room-booking">
-                <a href="/contact" className="btn btn-primary">
+                <a 
+                  href={BOOKING_LINK}
+                  className="btn btn-primary"
+                  onClick={handleBookNow}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Book This Room
                 </a>
                 <a href="tel:8559038506" className="btn btn-outline">
@@ -234,7 +249,13 @@ const Rooms = () => {
               <a href="tel:8559038506" className="btn btn-primary">
                 Call Now: 85590 38506
               </a>
-              <a href="/contact" className="btn btn-outline">
+              <a 
+                href={BOOKING_LINK}
+                className="btn btn-outline"
+                onClick={handleBookNow}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Contact for Booking
               </a>
             </div>

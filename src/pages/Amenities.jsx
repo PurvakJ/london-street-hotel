@@ -4,7 +4,13 @@ import Hero from '../components/Hero';
 
 const Amenities = () => {
   const [activeCategory] = useState('all');
-  
+  const BOOKING_LINK = " https://wa.me/qr/4PHKNEIAHRWRG1";
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // Open Instagram link in a new tab
+    window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer');
+  };
+
   const amenities = [
     { 
       icon: "🏨", 
@@ -238,7 +244,13 @@ const Amenities = () => {
               <a href="/room" className="btn btn-primary">
                 View Rooms
               </a>
-              <a href="/contact" className="btn btn-outline">
+              <a 
+                href={BOOKING_LINK}
+                className="btn btn-secondary"
+                onClick={handleBookNow}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Contact Us
               </a>
             </div>

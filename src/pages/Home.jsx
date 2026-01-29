@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 
 const Home = () => {
+  // Instagram booking link
+  const BOOKING_LINK = " https://wa.me/qr/4PHKNEIAHRWRG1";
+
   // State for room showcase carousel
   const [currentRoomIndex, setCurrentRoomIndex] = useState(0);
   
@@ -31,7 +34,6 @@ const Home = () => {
   
     return () => clearInterval(interval);
   }, [roomTypes.length]);
-  
 
   const nextRoom = () => {
     setCurrentRoomIndex(prev => (prev + 1) % roomTypes.length);
@@ -39,6 +41,12 @@ const Home = () => {
 
   const prevRoom = () => {
     setCurrentRoomIndex(prev => (prev - 1 + roomTypes.length) % roomTypes.length);
+  };
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // Open Instagram link in a new tab
+    window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -187,30 +195,35 @@ const Home = () => {
         </div>
       </section>
 
-     {/* Booking CTA Section */}
-<section className="section booking-section">
-  <div className="container">
-    <div className="booking-cta">
-      <h2>Book Your Stay Today</h2>
-      <p>
-        Experience comfortable accommodation with essential amenities at London Street Hotel. 
-        Perfect for business trips, family visits, or event attendance.
-      </p>
-      <div className="cta-buttons">
-        <Link to="/room" className="btn btn-primary">
-          View Rooms & Rates
-        </Link>
-        <Link to="/venue" className="btn btn-outline">
-          View Banquet Hall
-        </Link>
-        <Link to="/contact" className="btn btn-secondary">
-             Contact Us
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-
+      {/* Booking CTA Section */}
+      <section className="section booking-section">
+        <div className="container">
+          <div className="booking-cta">
+            <h2>Book Your Stay Today</h2>
+            <p>
+              Experience comfortable accommodation with essential amenities at London Street Hotel. 
+              Perfect for business trips, family visits, or event attendance.
+            </p>
+            <div className="cta-buttons">
+              <Link to="/room" className="btn btn-primary">
+                View Rooms & Rates
+              </Link>
+              <Link to="/venue" className="btn btn-outline">
+                View Banquet Hall
+              </Link>
+              <a 
+                href={BOOKING_LINK}
+                className="btn btn-secondary"
+                onClick={handleBookNow}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

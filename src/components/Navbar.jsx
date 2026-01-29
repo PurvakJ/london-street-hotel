@@ -9,6 +9,9 @@ const Navbar = () => {
   const [activeNav, setActiveNav] = useState('/');
   const location = useLocation();
 
+  // Instagram booking link
+  const BOOKING_LINK = " https://wa.me/qr/4PHKNEIAHRWRG1";
+
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +45,12 @@ const Navbar = () => {
     }
   };
 
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // Open Instagram link in a new tab
+    window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer');
+  };
+
   const navItems = [
     { path: '/', label: 'Home' }, 
     { path: '/about', label: 'About' },
@@ -67,7 +76,15 @@ const Navbar = () => {
             </div>
           </div>
           <div className="top-bar-right">
-            <a href="/contact" className="top-bar-btn">Book Now</a>
+            <a 
+              href={BOOKING_LINK} 
+              className="top-bar-btn"
+              onClick={handleBookNow}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Now
+            </a>
           </div>
         </div>
       </div>
@@ -98,12 +115,17 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-
           </ul>
 
           {/* Desktop Booking Button */}
           <div className="desktop-booking">
-            <a href="/contact" className="btn btn-primary">
+            <a 
+              href={BOOKING_LINK}
+              className="btn btn-primary"
+              onClick={handleBookNow}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaCalendarAlt className="btn-icon" />
               Book Now
             </a>

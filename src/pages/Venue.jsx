@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 
 const Venue = () => {
+  // Instagram booking link
+  const BOOKING_LINK = "https://wa.me/qr/4PHKNEIAHRWRG1";
+
   const [selectedEvent, setSelectedEvent] = useState(0);
 
   // Simplified - just one banquet hall with different configurations
@@ -32,8 +35,8 @@ const Venue = () => {
       "https://i.postimg.cc/FH2KQFGx/Whats_App_Image_2026_01_29_at_14_53_27.jpg",
       "https://i.postimg.cc/nh6LtVTY/Whats_App_Image_2026_01_29_at_14_53_27_(1).jpg"
     ],
-    pricing: "Affordable packages starting from $500",
-    dimensions: "50ft × 40ft (2000 sq ft)",
+    pricing: "Affordable packages starting from ₹500 Conditions Applied",
+    dimensions: "34ft × 75ft (2000 sq ft)",
     included: ["Tables & chairs", "Basic lighting", "Water station", "Setup assistance"],
     optional: ["Audio-visual equipment", "Decoration services", "Catering coordination", "Extra cleaning"]
   };
@@ -112,6 +115,12 @@ const Venue = () => {
       desc: "Family celebration event" 
     }
   ];
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // Open Instagram link in a new tab
+    window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <>
@@ -319,6 +328,20 @@ const Venue = () => {
           <div className="cta-content">
             <h2>Book Our Banquet Hall</h2>
             <p>Perfect for weddings, conferences, parties, and all special occasions</p>
+            <div className="cta-buttons">
+              <a 
+                href={BOOKING_LINK}
+                className="btn btn-primary"
+                onClick={handleBookNow}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Banquet Hall
+              </a>
+              <a href="tel:8559038506" className="btn btn-outline">
+                Call to Inquire
+              </a>
+            </div>
           </div>
         </div>
       </section>
