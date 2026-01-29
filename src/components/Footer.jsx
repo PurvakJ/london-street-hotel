@@ -6,10 +6,10 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Rooms", path: "/rooms" },
-    { name: "Banquet Hall", path: "/banquet" },
+    { name: "Rooms", path: "/room" },
+    { name: "Banquet Hall", path: "/venue" },
     { name: "Amenities", path: "/amenities" },
-    { name: "Gallery", path: "/gallery" },
+    { name: "Gallery", path: "/venue" },
     { name: "Contact", path: "/contact" }
   ];
 
